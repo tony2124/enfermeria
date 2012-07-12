@@ -17,22 +17,77 @@ class Default_Controller extends ZP_Controller {
 	}
 	
 	public function index() {	
-		$vars["message"] = __(_("Hello World"));
-		$vars["view"]	 = $this->view("show", TRUE);
-		
+		redirect(get("webURL")._sh."default/avisos");
+	}
+
+	public function avisos()
+	{
+		$vars['view'] = $this->view("avisos", true);
 		$this->render("content", $vars);
 	}
 
-	public function test($param1 = "Hola", $param2 = "Adios") {
-		print "New dispatcher it's works fine: $param1, $param2";
+	public function antecedentes()
+	{
+		$vars['view'] = $this->view("antecedentes", true);
+		$this->render("content", $vars);
 	}
 
-	public function show($message) {
-		$vars["message"] = $message;
-		$vars["view"]	 = $this->view("show", TRUE);
-		
+
+	public function mision()
+	{
+		$vars['view'] = $this->view("mision", true);
 		$this->render("content", $vars);
-		#$this->view("show", $vars);
+	}
+
+
+	public function vision()
+	{
+		$vars['view'] = $this->view("vision", true);
+		$this->render("content", $vars);
+	}
+
+
+	public function directorio()
+	{
+		$vars['view'] = $this->view("directorio", true);
+		$this->render("content", $vars);
+	}
+
+
+	public function filosofia()
+	{
+		$vars['view'] = $this->view("filosofia", true);
+		$this->render("content", $vars);
+	}
+
+	public function perfilingreso()
+	{
+		$vars['view'] = $this->view("perfilingreso", true);
+		$this->render("content", $vars);
+	}
+
+	public function perfilegreso()
+	{
+		$vars['view'] = $this->view("perfilegreso", true);
+		$this->render("content", $vars);
+	}
+
+	public function requisitosegreso()
+	{
+		$vars['view'] = $this->view("requisitosegreso", true);
+		$this->render("content", $vars);
+	}
+
+	public function titulacion()
+	{
+		$vars['view'] = $this->view("titulacion", true);
+		$this->render("content", $vars);
+	}
+
+	public function nuevoingreso()
+	{
+		$vars['view'] = $this->view("nuevoingreso", true);
+		$this->render("content", $vars);
 	}
 
 }

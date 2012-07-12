@@ -1,0 +1,2 @@
+<div class="alert alert-success"><h2>VISIÓN</h2></div>
+<p>Consolidar el liderazgo de la práctica de enfermería, usando modelos pedagógicos actualizados, progresistas y flexibles, e incorporando tecnologías modernas que se refleje en la práctica docente y en el desempeño de sus egresados, logrando el reconocimiento social y de los diferentes ámbitos del ejercicio profesional.</p>
