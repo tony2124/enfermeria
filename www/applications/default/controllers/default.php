@@ -90,4 +90,41 @@ class Default_Controller extends ZP_Controller {
 		$this->render("content", $vars);
 	}
 
+	public function servicio()
+	{
+		$vars['view'] = $this->view("serviciosocial", true);
+		$this->render("content", $vars);
+	}
+
+	public function marco()
+	{
+		$vars['view'] = $this->view("marco", true);
+		$this->render("content", $vars);
+	}
+
+	public function reginterno()
+	{
+		$vars['view'] = $this->view("reginterno", true);
+		$this->render("content", $vars);
+	}
+
+	public function regbiblioteca()
+	{
+		$vars['view'] = $this->view("regbiblioteca", true);
+		$this->render("content", $vars);
+	}
+
+	public function horarios()
+	{
+		$vars['view'] = $this->view("horarios", true);
+		$this->render("content", $vars);
+	}
+
+	public function infraestructura()
+	{
+		$vars['view'] = $this->view("infraestructura", true);
+		$this->render("content", $vars);
+	}
+
+
 }

@@ -20,6 +20,14 @@
 			<div class="span10" style="width: 1000px;">
 				<?php $this->load(isset($view) ? $view : NULL, TRUE); ?>
 			</div>
+			
+			<hr>
+			<center>
+				<a href="">Calificaciones</a> | 
+				<a href="">Aula virtual</a> | 
+				<a href="">Profesores</a> 
+
+			</center>
 		</div>
 	</div>
 

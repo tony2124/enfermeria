@@ -1,33 +1,26 @@
-ALUMNOS DEL 6 to SEMESTRE SE LES COMUNICA QUE EL EXAMEN PREEGRESO SE LES APLICARA EL DIA 16 DE JUNIO DE 2012 A LAS 08:30 HRS EN LA ESCUELA DE ENFERMERIA EN LA CIUDAD DE MORELIA, LA SALIDA SERA EN AUTOBUS EL MISMO DIA A LAS 04:00 AM EN LA PRESIDENCIA MUNICIPAL LOS DE NUEVA ITALIA PASARAN POR ELLOS A CUATRO CAMINOS BAJO SU RESPONSABILIDAD , NO SE VA A ESPERAR A NADIE, CON UN COSTO DE $ 225.00 POR INDICACION DE LA DIRECTORA PIDE QUE SE VAYAN TODOS JUNTOS, SE DEBEN PRESENTAR SIN UNIFORME, CON CREDENCIAL DE LA ESCUELA, CON LAPIZ, SACAPUNTAS, BORRADOR QUE NO MANCHE Y LAPICERO.
-
-OJO ALUMNO QUE NO REALICE EL EXAMEN NO PODRA REALIZAR EL SERVICIO SOCIAL POR INDICACION DE LA SECRETARIA DE SALUD.
-
-OJO RFC
-
-1	AUCM881022AB0	MARIA MARILIN	AGUILAR	CERVANTES
-2	AEGG911111IP7	GUADALUPE MONTSERRAT	ALEJANDRES	GUIZAR
-3	EACA910626	 ANA CRISTINA	AMEZCUA	CORTEZ
-4	BADA871015J46	ALEJANDRA MONSERRAT	BALLESTEROS	DIAZ
-5	CEGP9305071H8	PALOMA ITZELL	CERVANTES	GARCIA
-6	CUOE910928UW0	ESTEFANIA	CUEVAS	OCHOA
-7	GAMG8909057I7	MARIA GUADALUPE	GARCIA	MOLINA
-8	GAYC860928NM4	CLAUDIA TERESA	GARCIA	YAÑEZ
-9	GATR901127474	RICARDO	GARNICA	TORRES
-10	HEVR910104PL2	RUTH JAZMIN	HERNANDEZ	VEGA
-11	IAMT900626CQ7	TAVITA	INFANTE	MEDRANO
-12	LEHV930601PY2	 VERONICA LIZBETH	LEON	 HERNANDEZ
-13	MAGV910202834	VIRIDIANA	MARTINEZ	GONZAGA
-14	MEMA8903301A5	 MARIA DE LOS ANGELES	MENDEZ	MATA 
-15	MONY900524JC1	  YADIRA	MOYA	NAVA
-16	NACN9008169G3	 NADHIR	NAVA	 CARRILLO
-17	PAVU910421791	ULISES	PADILLA	VALENCIA
-18	RAHL880106PZ2	LAURA BERENICE	RAMIREZ	HERNANDEZ
-19	RALE750202I61	ERIKA GRISELDA	RAMIREZ	LOPEZ
-20	RAVA910216QAA	 ANAYELI	RAMIREZ	VELASCO
-21	RUFG901212QT5	MARIA GUADALUPE	RUIZ	FELIPE 
-22	SAMM870902138	MARIEL ALONDRA	SANCHEZ	MONTES DE OCA
-23	SONN900118JW1	NELLY GUADALUPE	SOSA	NAVARRETE
-24	TATM890704LA8	 MARISOL	TAPIA	TORRES
-25	TOSA9004047YA	ANA RUBI	TORRES	SEPULVEDA
-26	VIFE890915CU7	ERIKA	VILLALÓN	FRANCO
-27	ZAPM910602RE3	 MAYRA IVETTE	ZAMBRANO	PORTILLO
+<div class="alert alert-success">
+	<h2>NUEVO INGRESO</h2>
+</div>
+<div style="text-align: justify; font-size: 15px;">
+<img src="<?php print path("www/lib/images/nuevoingreso.jpg","www") ?>" style="float: left; margin-right: 20px;" />
+<p>INSTRUCCIONES PARA CONOCER  EL RESULTADO DEL EXAMEN DE DIAGNÓSTICO 2012 Y CONTINUAR CON EL PROCESO DE INSCRIPCIÓN</p>
+<p>1.- Revisar en el siguiente link si apareces ACEPTADO  en el listado general.</p>
+<p>2.- Si apareces en la lista, deberás dar click en el link que aparece enseguida para que imprimas tu hoja de pre registro y la llenes manualmente o en máquina de escribir para entregarlo con tu carpeta.</p>
+<p>3.- A continuación elaboraras una carpeta color beige con tu nombre que contenga los siguientes documentos:</p>
+<p>
+	<ul>
+		<li>Certificado de Secundaria Original y Copia</li>
+ 		<li>Acta de Nacimiento original y copia (vigencia 2012)</li>
+ 		<li>Copia de la clave CURP ampliada al 200 %</li>
+ 		<li>Copia del Comprobante de Domicilio </li>
+		<li>2 Fotografías tamaño infantíl</li>
+ 		<li>Memorándum de Calificaciones (Si ha cursado la preparatoria)</li>
+ 	</ul>
+ </p>
+<div class="alert alert-error">LA DOCUMENTACIÓN SE ENTREGARÁ EN LA DIRECCIÓN DE CONTROL ESCOLAR DE LA ESCUELA</div>
+<p>4.- Si tienes toda la documentación anterior entonces imprimes el recibo de pago para presentar en el banco con el cual ADQUIERES tu  primer semestre, deberás entregar la copia de dicho pago junto con tu carpeta de documentos.  si no tienes los documentos completos pasar a la escuela por información y plazo.  OJO: LA HOJA TIENE FECHA LIMITE.</p>
+<p>5.- Debes pasar a la Escuela  del 30 de julio al 03 de  agosto a realizar un pago de 600 pesos por concepto de inscripción y curso propedéutico obligatorio que haz de realizar, y,  80 pesos por concepto de examen médico. Los recibos los anexas a la carpeta de documentos.</p>
+<p>6.- la fecha para inscribirte es el día 06 de agosto de 2012 sin excepción DE 8:00 a 13:00 HRS.</p>
+<p>7.- deberás imprimir el calendario del curso propedéutico para presentarte en la escuela a la 7 de la mañana ya que es obligatorio.</p>
+</div>
+<p>&nbsp;</p>

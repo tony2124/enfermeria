@@ -74,10 +74,10 @@
 				    <li><a href="<?php print get('webURL'). _sh .'default/marco/'  ?>">Marco jurídico</a></li>
 				    <li><a href="<?php print get('webURL'). _sh .'default/reginterno/' ?>">Reglamento interno</a></li>
 				    <li><a href="<?php print get('webURL'). _sh .'default/regbiblioteca/'  ?>">Reglamento biblioteca</a></li>
-				    <li><a href="<?php print get('webURL'). _sh .'default/horarios/'  ?>">Horarios de servicio</a></li>
+				   
 				</ul>
               </li>
-               <li><a href="#menu5">Infraestructura</a></li>
+               <li><a href="<?php print get('webURL'). _sh .'default/infraestructura/'  ?>">Infraestructura</a></li>
 				</ul>
               </li>
             </ul>
