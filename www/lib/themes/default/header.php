@@ -18,110 +18,81 @@
 		<link href="<?php print $this->themePath; ?>/css/style.css" rel="stylesheet">
 		<?php print $this->getCSS(); ?>
 		<script src="<?php print path("vendors/js/jquery-1.7.2.min.js","zan") ?>"></script>
+		
+		<!--bootstrap -->
 		<script src="<?php print path("vendors/css/frameworks/bootstrap/js/bootstrap.min.js", "zan"); ?>"></script>
-	-
-		<!--<script type="text/javascript" src="<?php print path("vendors/js/banner/shCore.js","zan") ?>"></script>
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/shBrushJScript.js","zan") ?>"></script>
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/shBrushCss.js","zan") ?>"></script>
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/shBrushXml.js","zan") ?>"></script>-->
-
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/mootools-core-1.3.js","zan") ?>"></script>
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/mootools-more.js","zan") ?>"></script>
 		
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/Gradually.js","zan") ?>"></script>
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/Gradually.Slideshow.js","zan") ?>"></script>
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/ImageDrawer.js","zan") ?>"></script>
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/ImageDrawer.Grid.js","zan") ?>"></script>
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/ImageDrawer.Expand.js","zan") ?>"></script>
-		
-		
-		<link type="text/css" rel="stylesheet" href="<?php print path("vendors/js/banner/shCore.css","zan") ?>" />
-		<link type="text/css" rel="stylesheet" href="<?php print path("vendors/js/banner/shThemeEclipse.css","zan") ?>" />
-		<link rel="stylesheet" type="text/css" href="<?php print path("vendors/js/banner/style.css","zan") ?>" media="screen,print" />
-		<link rel="stylesheet" type="text/css" href="<?php print path("vendors/js/banner/gradually.slideshow.css","zan") ?>" media="screen,print" />
-
+		<!--foundation -->
+		<link href="<?php print path("vendors/css/frameworks/foundation/foundation.min.css", "zan"); ?>" rel="stylesheet">
+	
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/jqFancyTransitions.1.8.min.js","zan") ?>"></script>
 		<script type="text/javascript">
-		/*(function($) {
-
-	window.addEvent('domready', function() {
-
-		var canvases = [];
-		var containers = $$('.drawer');
-		containers.each(function(element, key) {
-			var canvas = document.createElement('canvas');
-			canvas.inject(element);
-			canvases[key] = canvas;
+		$(document).ready( function(){
+		    $('#slideshowHolder').jqFancyTransitions({ 
+		    	width: 1000, 
+		    	height: 200,
+		    	effect: 'zipper',
+		    	titleOpacity: 0.7,
+		    	navigation: true });
 		});
 
-		var grid = new ImageDrawer.Grid({
-			gridHeight: 55,
-			gridWidth: 65,
-			interval: 70,
-			duration: 600
-		});
-
-		var expand = new ImageDrawer.Expand({
-			slideWidth: 65,
-			interval: 70,
-			duration: 600,
-			transition: 'expo:out'
-		});
-
-		var drawImages = ['<?php print path("www/lib/images/banner.jpg","www"); ?>'];
-		var images = Asset.images(drawImages, {
-			onComplete: function() {
-				grid.setImage(images.shift());
-				grid.setCanvas(canvases.shift());
-
-				var methods = $('grid').getElements('li a');
-				methods.addEvent('click', function(event) {
-					event.stop();
-					var t = event.target;
-					var method = t.getProperty('href').replace('#', '');
-					grid[method]();
-				});
-
-				expand.setImage(images.shift());
-				expand.setCanvas(canvases.shift());
-
-				methods = $('expand').getElements('li a');
-				methods.addEvent('click', function(event) {
-					event.stop();
-					var t = event.target;
-					var method = t.getProperty('href').replace('#', '');
-					expand[method]();
-				});
-			}
-		});
-
-	});
-
-}(document.id));
-		*/
-		$(document).ready(function() {	
-		
-			var expand = new ImageDrawer.Expand({
-			    'slideWidth': 65,
-			    'interval': 200,
-			    'duration': 600,
-			    'transition': 'expo:in:out'
-				});
-						 
-			var gallery = document.id("gallery");
-			var images = gallery.getElements(".graduallyImages li img");
-					 
-			new Gradually.Slideshow(gallery, {
-			    'drawer': expand,  //Instance of ImageDrawer
-			    'images': images,
-			    'interval': 3000
-				});
-		});
 		</script>
-		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-			<!--[if lt IE 9]>
-			  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-			<![endif]-->
-		<!-- Le styles -->
+
+		<style type="text/css">
+		@-webkit-keyframes greenPulse {
+			from { background-color: #749a02; -webkit-box-shadow:: 0 0 9px #333; }
+			50% { background-color: #91bd09; -webkit-box-shadow:: 38px 38px 38px #91bd09; }
+			to { background-color: #749a02; -webkit-box-shadow:: 0 0 9px #333; }
+		}
+
+		@-webkit-keyframes redPulse {
+			from { background-color: #B40404; -webkit-box-shadow:: 0 0 9px #333; }
+			50% { background-color: #FF0000; -webkit-box-shadow:: 0 0 18px #FF0000; }
+			to { background-color: #B40404; -webkit-box-shadow:: 0 0 9px #333; }
+		}
+
+		@-webkit-keyframes bluePulse {
+			from { background-color: #0404B4; -webkit-box-shadow:: 0 0 9px #333; }
+			50% { background-color: #2E2EFE; -webkit-box-shadow:: 0 0 30px #2E2EFE; }
+			to { background-color: #0404B4; -webkit-box-shadow:: 0 0 9px #333; }
+		}
+
+		a.green.button {
+		-webkit-animation-name: greenPulse;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-iteration-count: infinite;
+		}
+
+		a.red.button {
+		-webkit-animation-name: redPulse;
+		-webkit-animation-duration: 3s;
+		-webkit-animation-iteration-count: infinite;
+		}
+
+		a.blue.button {
+		-webkit-animation-name: bluePulse;
+		-webkit-animation-duration: 2.5s;
+		-webkit-animation-iteration-count: infinite;
+		}
+
+		.efect {
+			width:55px;
+			height:55px;
+			-webkit-transition: 0.5s;
+		}
+
+		.efect:hover{
+			width:90px;
+			height:90px;
+			-webkit-transition: 0.5s;
+			/* Firefox */
+			-moz-transform: rotate(360deg);
+			/* WebKit */
+			-webkit-transform: rotate(360deg);
+		}
+
+		</style>
+		
 	</head>
 
 	<body>

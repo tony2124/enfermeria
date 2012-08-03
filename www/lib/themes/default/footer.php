@@ -9,7 +9,7 @@
 ?>
 		
 		<footer>
-			<p>&copy; <?php print __("All rights reserved"); ?> - Escuela de Enfermería Apatzingán AC</p>
+			<center><p>&copy; <?php print __("All rights reserved"); ?> - Escuela de Enfermería Apatzingán AC</p></center>
 		</footer>
 	  
 	</div>

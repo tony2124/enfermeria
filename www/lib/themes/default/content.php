@@ -11,30 +11,22 @@
 	<div class="content" >
 		<div class="page-header">
 			
-<ul id="grid" class="methods">
-				<li><a href="#drawLeft">drawLeft</a></li>
-				<li><a href="#drawRight">drawRight</a></li>
-				<li><a href="#drawTop">drawTop</a></li>
-				<li><a href="#drawBottom">drawBottom</a></li>
-			</ul>
-<div class="drawer"></div>
+
+
 <!--			<img src="<?php print path("www/lib/images/banner.jpg","www"); ?>" width="1000" height="250">-->
-			<div id="gallery" class="gradually">
-			    <ul class="graduallyImages">
-			        <li><img title="image1 title" alt="image1 discription" src="<?php print path("www/lib/images/banner.jpg","www"); ?>" width="650" height="275" /></li>
-			        <li><img title="image3 title" alt="image3 discription" src="<?php print path("www/lib/images/banner2.jpg","www"); ?>" width="650" height="275" /></li>
-			        <li><img title="image4 title" alt="image4 discription" src="<?php print path("www/lib/images/banner3.jpg","www"); ?>" width="650" height="275" /></li>
-			    </ul>
-			    <p class="titlebar">
-			        <strong class="title"></strong>
-			        <span class="current"></span> / <span class="total"></span>
-			    </p>
+			<div id='slideshowHolder'>
+			 <img src='<?php print path("www/lib/images/banner1.jpg","www"); ?>' alt='La mejor escuela de enfermería de la región' width="1000" height="200" />
+			 <img src='<?php print path("www/lib/images/banner2.jpg","www"); ?>' alt='La mejor educación de enfermería' />
+			 <img src='<?php print path("www/lib/images/banner3.jpg","www"); ?>' alt='Estamos incorporados a la UMSNH' />
+			 <img src='<?php print path("www/lib/images/banner4.jpg","www"); ?>' alt='Visitanos' />
 			</div>
 
+			       
+ 
 
-			<a href="<?php print get("webURL")._sh.'default/calificaciones' ?>" class="btn btn-primary">CALIFICACIONES</a>
-			<a href="http://escuelaenfermeria.hostzi.com/moodle/login/index.php" class="btn btn-primary">&nbsp;AULA VIRTUAL&nbsp;</a>
-			<a href="<?php print get("webURL")._sh.'default/subircalificaciones' ?>" class="btn btn-primary">PROFESORES</a>
+			<a href="<?php print get("webURL")._sh.'default/calificaciones' ?>" class="green button small" style="-webkit-border-radius: 5px; text-decoration:none">CALIFICACIONES</a>
+			<a href="http://escuelaenfermeria.hostzi.com/moodle/login/index.php" class="red button small" style="-webkit-border-radius: 5px; text-decoration:none">&nbsp;AULA VIRTUAL&nbsp;</a>
+			<a href="<?php print get("webURL")._sh.'default/subircalificaciones' ?>" class="blue nice button small" style="-webkit-border-radius: 5px; text-decoration:none">PROFESORES</a>
 			<?php if(SESSION("id_alumno")) { ?>
 			<div class="btn-group pull-right">
 	          <a class="btn btn-danger" href="#"><i class="icon-user icon-white"></i> <?php print SESSION('nombre_alumno')." ".SESSION("ap_alumno")." ".SESSION("am_alumno") ?> </a>
@@ -57,8 +49,32 @@
 				<a href="">Aula virtual</a> | 
 				<a href="">Profesores</a> 
 
-			</center>
+			
+			<div class="widget HTML" id="HTML9">
+				<hr>
+				<h3 class="title">¡Suscríbete!</h3>
+				<div class="widget-content">
+					<div class="msociales" style="text-align:center;">
+						<a class="feed" target="_blank" href="#" rel="alternate" title="Suscribirse a las entradas" type="application/rss+xml">
+							<img class="efect" alt="rss" src="<?php print path("www/lib/images/redessociales/feed.png","www") ?>">
+						</a>
+						<a class="twitter" target="_blank" href="http://twitter.com/enfermeriaapatzingan" title="Síguenos en Twitter">
+							<img class="efect" alt="Twitter" src="<?php print path("www/lib/images/redessociales/twitter2.png","www") ?>">
+						</a>
+						<a class="facebook" target="_blank" href="http://www.facebook.com/pages/enfermeriaapatzingan" title="Facebook">
+							<img class="efect" alt=" Facebook" src="<?php print path("www/lib/images/redessociales/face.png","www") ?>">
+						</a>
+						<a class="youtube" target="_blank" href="http://www.youtube.com/user/enfermeriaapatzingan" title="Suscríbete a YouTube">
+							<img class="efect" alt="YouTube" src="<?php print path("www/lib/images/redessociales/youtube2.png","www") ?>"> 
+						</a>
+
+					</div>
+
+
+			
+			</div>
 		</div>
+		</center>
 	</div>
 
 <?php } ?>

@@ -2,6 +2,7 @@
 	<h2>A V I S O</h2>
 </div>
 <div  style="text-align: justify; font-size: 15px; text-indent: 2em;">
+	<img src="<?php print path("www/lib/images/aviso.jpg","www") ?>" style="float: left; margin-right: 20px;" />
 	<p>Los pasantes del Área de la Salud, que prestarán su servicio social en la promoción 01 de Agosto de 2012 al 31 de Julio de 2013, deberán seguir el siguiente procedimiento.</p>
 <p>1. Registrarse en las siguientes páginas de la Secretaría de Salud:</p>
 <p> * REGISTRO ESTATAL: <a href="http://www.ensenanzamich.gob.mx">www.ensenanzamich.gob.mx</a> y</p>
@@ -13,4 +14,8 @@
 <p>6. La asignación de campos clínicos será en el Auditorio de la Biblioteca de la Facultad de Ciencias Médicas y Biológicas, de la U.M.S.N.H, a partir de las 8:00 a.m., en las fechas que a continuación se mencionan.</p>
 <p>UNIVERSIDAD MICHOACANA DE SAN NICOLAS DE HIDALGO</p>
 <p>DIRECCION DE SERVICIO SOCIAL</p>
+<hr>
+<hr>
+"Por una educación de calidad"
+
 </div>
