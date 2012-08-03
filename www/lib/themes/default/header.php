@@ -27,7 +27,8 @@
 		<script src="<?php print path("vendors/css/frameworks/bootstrap/js/bootstrap.min.js", "zan"); ?>"></script>
 		
 		<!--foundation -->
-		<link href="<?php print path("vendors/css/frameworks/foundation/foundation.min.css", "zan"); ?>" rel="stylesheet">
+		<!--<link href="<?php print path("vendors/css/frameworks/foundation/foundation.min.css", "zan"); ?>" rel="stylesheet">-->
+		<link href="<?php print path("vendors/css/frameworks/buttons/buttons.css", "zan"); ?>" rel="stylesheet">
 		
 		<!-- BANNER  -->
 		<script type="text/javascript" src="<?php print path("vendors/js/banner/jqFancyTransitions.1.8.min.js","zan") ?>"></script>
@@ -47,10 +48,10 @@
 		</script>
 
 		<style type="text/css">
-		@-webkit-keyframes greenPulse {
-			from { background-color: #749a02; -webkit-box-shadow:: 0 0 9px #333; }
-			50% { background-color: #91bd09; -webkit-box-shadow:: 38px 38px 38px #91bd09; }
-			to { background-color: #749a02; -webkit-box-shadow:: 0 0 9px #333; }
+		@-webkit-keyframes pinkPulse {
+			from { background-color: #F781F3; -webkit-box-shadow:: 0 0 9px #333; }
+			50% { background-color: #FE2EC8; -webkit-box-shadow:: 38px 38px 38px #0AFC02; }
+			to { background-color: #F781F3; -webkit-box-shadow:: 0 0 9px #333; }
 		}
 
 		@-webkit-keyframes redPulse {
@@ -65,20 +66,20 @@
 			to { background-color: #0404B4; -webkit-box-shadow:: 0 0 9px #333; }
 		}
 
-		a.green.button {
-		-webkit-animation-name: greenPulse;
+		a.pink1.button {
+		-webkit-animation-name: pinkPulse;
 		-webkit-animation-duration: 2s;
 		-webkit-animation-iteration-count: infinite;
 		}
 
-		a.red.button {
-		-webkit-animation-name: redPulse;
+		a.pink2.button {
+		-webkit-animation-name: pinkPulse;
 		-webkit-animation-duration: 3s;
 		-webkit-animation-iteration-count: infinite;
 		}
 
-		a.blue.button {
-		-webkit-animation-name: bluePulse;
+		a.pink3.button {
+		-webkit-animation-name: pinkPulse;
 		-webkit-animation-duration: 2.5s;
 		-webkit-animation-iteration-count: infinite;
 		}
@@ -99,6 +100,22 @@
 			-webkit-transform: rotate(360deg);
 		}
 
+		.google {
+			width:25px;
+			height:25px;
+			-webkit-transition: 0.5s;
+		}
+
+		.google:hover{
+			width:50px;
+			height:50px;
+			-webkit-transition: 0.5s;
+			/* Firefox */
+			-moz-transform: rotate(360deg);
+			/* WebKit */
+			-webkit-transform: rotate(360deg);
+		}
+
 		.ad-gallery {
 		  width: 800px;
 		}
@@ -110,7 +127,7 @@
 		
 	</head>
 
-	<body style="background: #A8CAF1;">
+	<body style="background: #CFCFCF ;">
 		 <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">

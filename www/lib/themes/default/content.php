@@ -11,22 +11,20 @@
 	<div class="content" >
 		<div class="page-header">
 			
-
-
-<!--			<img src="<?php print path("www/lib/images/banner.jpg","www"); ?>" width="1000" height="250">-->
-			<div id='slideshowHolder' style="border: 5px solid #BAD340">
+			<div id='slideshowHolder' style="border: 3px solid #000000">
 			 <img src='<?php print path("www/lib/images/banner1.jpg","www"); ?>' alt='La mejor escuela de enfermería de la región' width="1000" height="200" />
 			 <img src='<?php print path("www/lib/images/banner2.jpg","www"); ?>' alt='La mejor educación de enfermería' />
 			 <img src='<?php print path("www/lib/images/banner3.jpg","www"); ?>' alt='Estamos incorporados a la UMSNH' />
 			 <img src='<?php print path("www/lib/images/banner4.jpg","www"); ?>' alt='Visitanos' />
 			</div>
 
-			       
- 
-
-			<a href="<?php print get("webURL")._sh.'default/calificaciones' ?>" class="green button small" style="-webkit-border-radius: 5px; text-decoration:none">CALIFICACIONES</a>
-			<a href="http://escuelaenfermeria.hostzi.com/moodle/login/index.php" class="red button small" style="-webkit-border-radius: 5px; text-decoration:none">&nbsp;AULA VIRTUAL&nbsp;</a>
-			<a href="<?php print get("webURL")._sh.'default/subircalificaciones' ?>" class="blue nice button small" style="-webkit-border-radius: 5px; text-decoration:none">PROFESORES</a>
+			<a style="font-size: 15px" data-icon="✿" href="<?php print get("webURL")._sh.'default/calificaciones' ?>" class="blue button morph pnk1">CALIFICACIONES</a>
+			<a style="font-size: 15px" data-icon="✿" href="http://escuelaenfermeria.hostzi.com/moodle/login/index.php" class="blue button morph pnk2" style="-webkit-border-radius: 10px; text-decoration:none">&nbsp;AULA VIRTUAL&nbsp;</a>
+			<a style="font-size: 15px" data-icon="✿" href="<?php print get("webURL")._sh.'default/subircalificaciones' ?>" class="blue button morph pnk3" style="-webkit-border-radius: 10px; text-decoration:none">PROFESORES</a>
+			
+			<a target="_blank" href="https://www.google.com.mx/chrome/" rel="alternate" title="Descargar Google Chrome">
+				<img class="google pull-right" src="<?php print path("www/lib/images/chrome.png","www") ?>">
+			</a>
 			<?php if(SESSION("id_alumno")) { ?>
 			<div class="btn-group pull-right">
 	          <a class="btn btn-danger" href="#"><i class="icon-user icon-white"></i> <?php print SESSION('nombre_alumno')." ".SESSION("ap_alumno")." ".SESSION("am_alumno") ?> </a>
@@ -36,6 +34,7 @@
 	          </ul>
 	        </div>
 	        <?php } ?>
+
 		</div>
 				
 		<div class="row">
@@ -48,7 +47,6 @@
 				<a href="">Calificaciones</a> | 
 				<a href="">Aula virtual</a> | 
 				<a href="">Profesores</a> 
-
 			
 			<div class="widget HTML" id="HTML9">
 				<hr>

@@ -9,33 +9,33 @@
     <div class="ad-thumbs">
       <ul class="ad-thumb-list">
         <li>
-          <a href="<?php print path("www/lib/images/infra1.jpg","www") ?>">
-            <img src="<?php print path("www/lib/images/infra1t.jpg","www") ?>" title="Entrada a la institución">
+          <a href="<?php print path("www/lib/images/infra1.JPG","www") ?>">
+            <img src="<?php print path("www/lib/images/infra1t.JPG","www") ?>" title="Entrada a la institución">
           </a>
         </li>
         <li>
-          <a href="<?php print path("www/lib/images/infra2.jpg","www") ?>">
-            <img src="<?php print path("www/lib/images/infra2t.jpg","www") ?>" title="Alumnos">
+          <a href="<?php print path("www/lib/images/infra2.JPG","www") ?>">
+            <img src="<?php print path("www/lib/images/infra2t.JPG","www") ?>" title="Alumnos">
           </a>
         </li>
          <li>
-          <a href="<?php print path("www/lib/images/infra3.jpg","www") ?>">
-            <img src="<?php print path("www/lib/images/infra3t.jpg","www") ?>" title="Alumnos">
+          <a href="<?php print path("www/lib/images/infra3.JPG","www") ?>">
+            <img src="<?php print path("www/lib/images/infra3t.JPG","www") ?>" title="Alumnos">
           </a>
         </li>
         <li>
-          <a href="<?php print path("www/lib/images/infra4.jpg","www") ?>">
-            <img src="<?php print path("www/lib/images/infra4t.jpg","www") ?>" title="Equipo">
+          <a href="<?php print path("www/lib/images/infra4.JPG","www") ?>">
+            <img src="<?php print path("www/lib/images/infra4t.JPG","www") ?>" title="Equipo">
           </a>
         </li>
         <li>
-          <a href="<?php print path("www/lib/images/infra5.jpg","www") ?>">
-            <img src="<?php print path("www/lib/images/infra5t.jpg","www") ?>" title="Equipo">
+          <a href="<?php print path("www/lib/images/infra5.JPG","www") ?>">
+            <img src="<?php print path("www/lib/images/infra5t.JPG","www") ?>" title="Equipo">
           </a>
         </li>
         <li>
-          <a href="<?php print path("www/lib/images/infra6.jpg","www") ?>">
-            <img src="<?php print path("www/lib/images/infra6t.jpg","www") ?>" title="Salón de clases">
+          <a href="<?php print path("www/lib/images/infra6.JPG","www") ?>">
+            <img src="<?php print path("www/lib/images/infra6t.JPG","www") ?>" title="Salón de clases">
           </a>
         </li>
         </li>
