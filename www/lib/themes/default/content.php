@@ -10,7 +10,23 @@
 <div class="container" style="width: 1000px;">
 	<div class="content" >
 		<div class="page-header">
-			<img src="<?php print path("www/lib/images/banner.jpg","www"); ?>" width="1000" height="250">
+			
+
+
+<!--			<img src="<?php print path("www/lib/images/banner.jpg","www"); ?>" width="1000" height="250">-->
+			<div id="gallery" class="gradually">
+			    <ul class="graduallyImages">
+			        <li><img title="image1 title" alt="image1 discription" src="<?php print path("www/lib/images/banner.jpg","www"); ?>" width="650" height="275" /></li>
+			        <li><img title="image3 title" alt="image3 discription" src="<?php print path("www/lib/images/banner2.jpg","www"); ?>" width="650" height="275" /></li>
+			        <li><img title="image4 title" alt="image4 discription" src="<?php print path("www/lib/images/banner3.jpg","www"); ?>" width="650" height="275" /></li>
+			    </ul>
+			    <p class="titlebar">
+			        <strong class="title"></strong>
+			        <span class="current"></span> / <span class="total"></span>
+			    </p>
+			</div>
+
+
 			<a href="<?php print get("webURL")._sh.'default/calificaciones' ?>" class="btn btn-primary">CALIFICACIONES</a>
 			<a href="http://escuelaenfermeria.hostzi.com/moodle/login/index.php" class="btn btn-primary">&nbsp;AULA VIRTUAL&nbsp;</a>
 			<a href="<?php print get("webURL")._sh.'default/subircalificaciones' ?>" class="btn btn-primary">PROFESORES</a>

@@ -10,6 +10,7 @@
 <!DOCTYPE html>
 <html lang="<?php print get("webLang"); ?>">
 	<head>
+
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title><?php print $this->getTitle(); ?></title>
 		
@@ -18,7 +19,45 @@
 		<?php print $this->getCSS(); ?>
 		<script src="<?php print path("vendors/js/jquery-1.7.2.min.js","zan") ?>"></script>
 		<script src="<?php print path("vendors/css/frameworks/bootstrap/js/bootstrap.min.js", "zan"); ?>"></script>
+
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/shCore.js","zan") ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/shBrushJScript.js","zan") ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/shBrushCss.js","zan") ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/shBrushXml.js","zan") ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/mootools-core-1.3.js","zan") ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/mootools-more.js","zan") ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/Gradually.js","zan") ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/Gradually.Slideshow.js","zan") ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/ImageDrawer.js","zan") ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/ImageDrawer.Grid.js","zan") ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/ImageDrawer.Expand.js","zan") ?>"></script>
 		
+		
+		<link type="text/css" rel="stylesheet" href="<?php print path("vendors/js/banner/shCore.css","zan") ?>" />
+		<link type="text/css" rel="stylesheet" href="<?php print path("vendors/js/banner/shThemeEclipse.css","zan") ?>" />
+		<link rel="stylesheet" type="text/css" href="<?php print path("vendors/js/banner/style.css","zan") ?>" media="screen,print" />
+		<link rel="stylesheet" type="text/css" href="<?php print path("vendors/js/banner/gradually.slideshow.css","zan") ?>" media="screen,print" />
+
+		<script type="text/javascript">
+		$(document).ready(function() {	
+		
+			var expand = new ImageDrawer.Expand({
+			    'slideWidth': 65,
+			    'interval': 200,
+			    'duration': 600,
+			    'transition': 'expo:in:out'
+				});
+						 
+			var gallery = document.id("gallery");
+			var images = gallery.getElements(".graduallyImages li img");
+					 
+			new Gradually.Slideshow(gallery, {
+			    'drawer': expand,  //Instance of ImageDrawer
+			    'images': images,
+			    'interval': 3000
+				});
+		});
+		</script>
 		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
 			<!--[if lt IE 9]>
 			  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

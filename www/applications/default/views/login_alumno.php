@@ -1,4 +1,4 @@
-<img src="<?php print path("www/lib/images/login_alumnos.jpg","www") ?>" width="300" height="300" style="float:left">
+<img src="<?php print path("www/lib/images/login_alumnos.jpg","www") ?>" width="400" height="300" style="float:left">
 <center><form action="<?php print get("webURL")._sh."default/iniciar_sesion_alumno" ?>" method="post" class="span7">
 	<?php if(isset($error)) { ?>
 <p>&nbsp;</p>
