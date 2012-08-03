@@ -16,5 +16,13 @@ class Default_Model extends ZP_Model {
 		$this->table = "contacts";
 	}
 
+	public function obtenerAlumno($user)
+	{
+		return $this->Db->query("select * from alumnos where id_alumno = '$user'");
+	}
 	
+	public function obtenerMaterias($semestre)
+	{
+		return $this->Db->query("select * from materias where semestre_materia <= '$semestre'");
+	}
 }

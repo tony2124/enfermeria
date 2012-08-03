@@ -11,9 +11,18 @@
 	<div class="content" >
 		<div class="page-header">
 			<img src="<?php print path("www/lib/images/banner.jpg","www"); ?>" width="1000" height="250">
-			<a href="" class="btn btn-primary">CALIFICACIONES</a>
-			<a href="" class="btn btn-primary">&nbsp;AULA VIRTUAL&nbsp;</a>
-			<a href="" class="btn btn-primary">PROFESORES</a>
+			<a href="<?php print get("webURL")._sh.'default/calificaciones' ?>" class="btn btn-primary">CALIFICACIONES</a>
+			<a href="http://escuelaenfermeria.hostzi.com/moodle/login/index.php" class="btn btn-primary">&nbsp;AULA VIRTUAL&nbsp;</a>
+			<a href="<?php print get("webURL")._sh.'default/subircalificaciones' ?>" class="btn btn-primary">PROFESORES</a>
+			<?php if(SESSION("id_alumno")) { ?>
+			<div class="btn-group pull-right">
+	          <a class="btn btn-danger" href="#"><i class="icon-user icon-white"></i> <?php print SESSION('nombre_alumno')." ".SESSION("ap_alumno")." ".SESSION("am_alumno") ?> </a>
+	          <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	            <li><a href="<?php print get("webURL")._sh."default/salir" ?>"><i class="i"></i> Salir sesión</a></li>
+	          </ul>
+	        </div>
+	        <?php } ?>
 		</div>
 				
 		<div class="row">
