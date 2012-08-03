@@ -18,14 +18,20 @@
 		<link href="<?php print $this->themePath; ?>/css/style.css" rel="stylesheet">
 		<?php print $this->getCSS(); ?>
 		<script src="<?php print path("vendors/js/jquery-1.7.2.min.js","zan") ?>"></script>
+
+		<!--Galeria -->
+		<script type="text/javascript" src="<?php print path("vendors/js/galeria/lib/jquery.ad-gallery.min.js","zan") ?>"></script>
+		<link href="<?php print path("vendors/js/galeria/lib/jquery.ad-gallery.css", "zan"); ?>" rel="stylesheet">
 		
 		<!--bootstrap -->
 		<script src="<?php print path("vendors/css/frameworks/bootstrap/js/bootstrap.min.js", "zan"); ?>"></script>
 		
 		<!--foundation -->
 		<link href="<?php print path("vendors/css/frameworks/foundation/foundation.min.css", "zan"); ?>" rel="stylesheet">
-	
+		
+		<!-- BANNER  -->
 		<script type="text/javascript" src="<?php print path("vendors/js/banner/jqFancyTransitions.1.8.min.js","zan") ?>"></script>
+
 		<script type="text/javascript">
 		$(document).ready( function(){
 		    $('#slideshowHolder').jqFancyTransitions({ 
@@ -34,6 +40,8 @@
 		    	effect: 'zipper',
 		    	titleOpacity: 0.7,
 		    	navigation: true });
+
+		    var galleries = $('.ad-gallery').adGallery();
 		});
 
 		</script>
@@ -91,11 +99,18 @@
 			-webkit-transform: rotate(360deg);
 		}
 
+		.ad-gallery {
+		  width: 800px;
+		}
+		.ad-gallery .ad-image-wrapper {
+		  height: 650px;
+		}
+
 		</style>
 		
 	</head>
 
-	<body>
+	<body style="background: #A8CAF1;">
 		 <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
