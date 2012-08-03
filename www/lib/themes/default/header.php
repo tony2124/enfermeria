@@ -19,13 +19,15 @@
 		<?php print $this->getCSS(); ?>
 		<script src="<?php print path("vendors/js/jquery-1.7.2.min.js","zan") ?>"></script>
 		<script src="<?php print path("vendors/css/frameworks/bootstrap/js/bootstrap.min.js", "zan"); ?>"></script>
-
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/shCore.js","zan") ?>"></script>
+	-
+		<!--<script type="text/javascript" src="<?php print path("vendors/js/banner/shCore.js","zan") ?>"></script>
 		<script type="text/javascript" src="<?php print path("vendors/js/banner/shBrushJScript.js","zan") ?>"></script>
 		<script type="text/javascript" src="<?php print path("vendors/js/banner/shBrushCss.js","zan") ?>"></script>
-		<script type="text/javascript" src="<?php print path("vendors/js/banner/shBrushXml.js","zan") ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/js/banner/shBrushXml.js","zan") ?>"></script>-->
+
 		<script type="text/javascript" src="<?php print path("vendors/js/banner/mootools-core-1.3.js","zan") ?>"></script>
 		<script type="text/javascript" src="<?php print path("vendors/js/banner/mootools-more.js","zan") ?>"></script>
+		
 		<script type="text/javascript" src="<?php print path("vendors/js/banner/Gradually.js","zan") ?>"></script>
 		<script type="text/javascript" src="<?php print path("vendors/js/banner/Gradually.Slideshow.js","zan") ?>"></script>
 		<script type="text/javascript" src="<?php print path("vendors/js/banner/ImageDrawer.js","zan") ?>"></script>
@@ -39,6 +41,63 @@
 		<link rel="stylesheet" type="text/css" href="<?php print path("vendors/js/banner/gradually.slideshow.css","zan") ?>" media="screen,print" />
 
 		<script type="text/javascript">
+		/*(function($) {
+
+	window.addEvent('domready', function() {
+
+		var canvases = [];
+		var containers = $$('.drawer');
+		containers.each(function(element, key) {
+			var canvas = document.createElement('canvas');
+			canvas.inject(element);
+			canvases[key] = canvas;
+		});
+
+		var grid = new ImageDrawer.Grid({
+			gridHeight: 55,
+			gridWidth: 65,
+			interval: 70,
+			duration: 600
+		});
+
+		var expand = new ImageDrawer.Expand({
+			slideWidth: 65,
+			interval: 70,
+			duration: 600,
+			transition: 'expo:out'
+		});
+
+		var drawImages = ['<?php print path("www/lib/images/banner.jpg","www"); ?>'];
+		var images = Asset.images(drawImages, {
+			onComplete: function() {
+				grid.setImage(images.shift());
+				grid.setCanvas(canvases.shift());
+
+				var methods = $('grid').getElements('li a');
+				methods.addEvent('click', function(event) {
+					event.stop();
+					var t = event.target;
+					var method = t.getProperty('href').replace('#', '');
+					grid[method]();
+				});
+
+				expand.setImage(images.shift());
+				expand.setCanvas(canvases.shift());
+
+				methods = $('expand').getElements('li a');
+				methods.addEvent('click', function(event) {
+					event.stop();
+					var t = event.target;
+					var method = t.getProperty('href').replace('#', '');
+					expand[method]();
+				});
+			}
+		});
+
+	});
+
+}(document.id));
+		*/
 		$(document).ready(function() {	
 		
 			var expand = new ImageDrawer.Expand({

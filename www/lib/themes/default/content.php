@@ -11,8 +11,13 @@
 	<div class="content" >
 		<div class="page-header">
 			
-
-
+<ul id="grid" class="methods">
+				<li><a href="#drawLeft">drawLeft</a></li>
+				<li><a href="#drawRight">drawRight</a></li>
+				<li><a href="#drawTop">drawTop</a></li>
+				<li><a href="#drawBottom">drawBottom</a></li>
+			</ul>
+<div class="drawer"></div>
 <!--			<img src="<?php print path("www/lib/images/banner.jpg","www"); ?>" width="1000" height="250">-->
 			<div id="gallery" class="gradually">
 			    <ul class="graduallyImages">
