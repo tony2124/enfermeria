@@ -48,51 +48,27 @@
 		</script>
 
 		<style type="text/css">
-		@-webkit-keyframes pinkPulse {
-			from { background-color: #F781F3; -webkit-box-shadow:: 0 0 9px #333; }
-			50% { background-color: #FE2EC8; -webkit-box-shadow:: 38px 38px 38px #0AFC02; }
-			to { background-color: #F781F3; -webkit-box-shadow:: 0 0 9px #333; }
-		}
-
-		@-webkit-keyframes redPulse {
-			from { background-color: #B40404; -webkit-box-shadow:: 0 0 9px #333; }
-			50% { background-color: #FF0000; -webkit-box-shadow:: 0 0 18px #FF0000; }
-			to { background-color: #B40404; -webkit-box-shadow:: 0 0 9px #333; }
-		}
-
 		@-webkit-keyframes bluePulse {
-			from { background-color: #0404B4; -webkit-box-shadow:: 0 0 9px #333; }
-			50% { background-color: #2E2EFE; -webkit-box-shadow:: 0 0 30px #2E2EFE; }
-			to { background-color: #0404B4; -webkit-box-shadow:: 0 0 9px #333; }
+			from { background-color: #0066FF; -webkit-box-shadow:: 0 0 9px #333; }
+			50% { background-color: #ffffff; -webkit-box-shadow:: 0 0 30px #2E2EFE; }
+			to { background-color: #0066FF; -webkit-box-shadow:: 0 0 9px #333; }
 		}
 
-		a.pink1.button {
-		-webkit-animation-name: pinkPulse;
+		a.blue.button {
+		-webkit-animation-name: bluePulse;
 		-webkit-animation-duration: 2s;
 		-webkit-animation-iteration-count: infinite;
 		}
 
-		a.pink2.button {
-		-webkit-animation-name: pinkPulse;
-		-webkit-animation-duration: 3s;
-		-webkit-animation-iteration-count: infinite;
-		}
-
-		a.pink3.button {
-		-webkit-animation-name: pinkPulse;
-		-webkit-animation-duration: 2.5s;
-		-webkit-animation-iteration-count: infinite;
-		}
-
 		.efect {
-			width:55px;
-			height:55px;
+			width:35px;
+			height:35px;
 			-webkit-transition: 0.5s;
 		}
 
 		.efect:hover{
-			width:90px;
-			height:90px;
+			width:50px;
+			height:50px;
 			-webkit-transition: 0.5s;
 			/* Firefox */
 			-moz-transform: rotate(360deg);
