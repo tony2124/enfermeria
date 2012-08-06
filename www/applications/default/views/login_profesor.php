@@ -1,6 +1,11 @@
-<img src="<?php print path("www/lib/images/login_profesores.jpg","www") ?>" width="300" height="300" style="float:left">
-<center><form class="span7">
-	<div class="alert alert-success">
+<img src="<?php print path("www/lib/images/login_profesores.jpg","www") ?>" width="350" style="float:left">
+<center>
+  <form action="<?php print get("webURL")._sh."default/iniciar_sesion_profesor" ?>" method="post" class="span7">
+	<?php if(isset($error)) { ?>
+<p>&nbsp;</p>
+<div class="alert alert-error"><?php print $error ?><button class="close" data-dismiss="alert">×</button></div>
+<?php } ?>
+  <div class="alert alert-success">
 	<h3>Inicio de sesión | Profesores</h3>
 </div>
   <table width="100%">
@@ -29,6 +34,8 @@
 </form>
 </center>
 
+<p>&nbsp;</p>
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>

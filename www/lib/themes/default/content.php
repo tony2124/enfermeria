@@ -24,14 +24,29 @@
 			
 			
 			<?php if(SESSION("id_alumno")) { ?>
-			<div class="btn-group pull-right">
-	          <a class="btn btn-danger" href="#"><i class="icon-user icon-white"></i> <?php print SESSION('nombre_alumno')." ".SESSION("ap_alumno")." ".SESSION("am_alumno") ?> </a>
-	          <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	            <li><a href="<?php print get("webURL")._sh."default/salir" ?>"><i class="i"></i> Salir sesión</a></li>
-	          </ul>
-	        </div>
-	        <?php } ?>
+
+			 <div class="btn-group pull-right">
+	            <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#">
+	              <i class="icon-user"></i> <?php print SESSION('nombre_alumno')." ".SESSION("ap_alumno")." ".SESSION("am_alumno") ?>  <span class="caret"></span>
+	            </a>
+	            <ul class="dropdown-menu">
+	              <li><a href="<?php print get("webURL")._sh."default/salir" ?>">Salir</a></li>
+	            </ul>
+	          </div>
+  			<?php } ?>
+			
+			<?php if(SESSION("id_profesor")) { ?>
+
+			 <div class="btn-group pull-right">
+	            <a class="btn btn-danger dropdown-toggle" data-toggle="dropdown" href="#">
+	              <i class="icon-user"></i> <?php print "Prof. ".SESSION('nombre_profesor')." ".SESSION("ap_profesor")." ".SESSION("am_profesor") ?>  <span class="caret"></span>
+	            </a>
+	            <ul class="dropdown-menu">
+	              <li><a href="<?php print get("webURL")._sh."default/salir" ?>">Salir</a></li>
+	            </ul>
+	          </div>
+  			<?php } ?>
+	      
 
 		</div>
 				
@@ -40,49 +55,7 @@
 				<?php $this->load(isset($view) ? $view : NULL, TRUE); ?>
 			</div>
 			
-			<hr>
-			<center>
-				<a href="<?php print get("webURL")._sh.'default/calificaciones' ?>">Calificaciones</a> | 
-				<a href="http://escuelaenfermeria.hostzi.com/moodle/login/index.php">Aula virtual</a> | 
-				<a href="<?php print get("webURL")._sh.'default/subircalificaciones' ?>">Profesores</a> 
 			
-			<div class="widget HTML" id="HTML9">
-				<hr>
-				
-				<div class="widget-content">
-					<div style="float:left; padding-left:30px">
-						<a target="_blank" href="http://www.umich.mx/">
-							<img src="<?php print path("www/lib/images/logo.jpg","www") ?>" width="100" height="100" title="UMSNH"></a>
-					</div>
-					<div style="float:right; padding-right:30px; width: 100px; height:100px">
-						Este sitio trabaja mucho mejor con <br><br>
-						<a target="_blank" href="https://www.google.com.mx/chrome/" rel="alternate" title="Descargar Google Chrome">
-							<img src="<?php print path("www/lib/images/google.jpg","www") ?>" >
-						</a>
-					</div>
-					<div class="msociales" style="text-align:center;">
-						<h3 class="title">¡Suscríbete!</h3>
-						<a class="feed" target="_blank" href="#" rel="alternate" title="Suscribirse a las entradas" type="application/rss+xml">
-							<img class="efect" alt="rss" src="<?php print path("www/lib/images/redessociales/feed.png","www") ?>">
-						</a>
-						<a class="twitter" target="_blank" href="http://twitter.com/enfermeriaapatzingan" title="Síguenos en Twitter">
-							<img class="efect" alt="Twitter" src="<?php print path("www/lib/images/redessociales/twitter2.png","www") ?>">
-						</a>
-						<a class="facebook" target="_blank" href="http://www.facebook.com/pages/enfermeriaapatzingan" title="Facebook">
-							<img class="efect" alt=" Facebook" src="<?php print path("www/lib/images/redessociales/face.png","www") ?>">
-						</a>
-						<a class="youtube" target="_blank" href="http://www.youtube.com/user/enfermeriaapatzingan" title="Suscríbete a YouTube">
-							<img class="efect" alt="YouTube" src="<?php print path("www/lib/images/redessociales/youtube2.png","www") ?>"> 
-						</a>
-
-					</div>
-					
-					
-
-			
-			</div>
-		</div>
-		</center>
 	</div>
 
 <?php } ?>

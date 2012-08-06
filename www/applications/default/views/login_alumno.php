@@ -1,5 +1,6 @@
-<img src="<?php print path("www/lib/images/login_alumnos.jpg","www") ?>" width="400" height="300" style="float:left">
-<center><form action="<?php print get("webURL")._sh."default/iniciar_sesion_alumno" ?>" method="post" class="span7">
+<img src="<?php print path("www/lib/images/caracteristicas.jpg","www") ?>" style="float:left">
+<center>
+  <form action="<?php print get("webURL")._sh."default/iniciar_sesion_alumno" ?>" method="post" class="span7">
 	<?php if(isset($error)) { ?>
 <p>&nbsp;</p>
 <div class="alert alert-error"><?php print $error ?><button class="close" data-dismiss="alert">×</button></div>

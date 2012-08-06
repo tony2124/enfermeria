@@ -5,12 +5,7 @@
 
 function semestre($fecha)
 	{
-			$fec = substr($fecha,1,2);
-			if($fec < 90)
-				$fecha = "20".$fec."-08-24";
-			else 
-				$fecha = "19".$fec."-08-24";
-			
+		
 			list($anio,$mes,$dia) = explode("-",$fecha);
 			$anio_dif = date("Y") - $anio;
 			$mes_dif = date("m") - $mes;
@@ -26,6 +21,39 @@ function semestre($fecha)
 				$mes_dif++;
 			return ceil($mes_dif/6);
 	}
+
+function periodo_actual()
+{
+		$nombremes1= "";
+		list($anio,$mes) = explode("-",date("Y-m"));
+		
+		if($mes >= 8 || $mes == 1)
+		{
+			$nombremes1 = "AGO";
+			$nombremes2 = "ENE";
+		}
+		else
+		{
+			$nombremes1 = "FEB";
+			$nombremes2 = "JUL";
+		}
+		
+		if($mes == 1)
+		{
+			$nombremes1 = $nombremes1."".($anio-1);
+		}
+		else
+		{
+			$nombremes1 = $nombremes1."".($anio);
+		}
+		
+		if($nombremes2 == 'ENE' && $mes!=1)
+			$anio = $anio + 1;
+			
+		$nombremes1.="-".$nombremes2."".$anio;
+
+		return $nombremes1;	
+}
 
 class Default_Controller extends ZP_Controller {
 	
@@ -164,7 +192,9 @@ class Default_Controller extends ZP_Controller {
 		else
 		{
 			$vars['view'] = $this->view("calificaciones", true);
-			$vars['materias'] = $this->Default_Model->obtenerMaterias(semestre(SESSION("fecha_inscripcion")));
+			$sem = semestre(SESSION("fecha_inscripcion"));
+			$vars['materias'] = $this->Default_Model->obtenerMaterias($sem);
+			$vars['semestre'] = $sem;
 
 		}
 		$this->render("content", $vars);
@@ -193,19 +223,57 @@ class Default_Controller extends ZP_Controller {
 		else
 			redirect(get("webURL")._sh."default/calificaciones/2");
 	}
-	public function subircalificaciones()
+
+	public function iniciar_sesion_profesor()
+	{
+		$user = POST('user');
+		$pass = POST('pass');
+		$datos = $this->Default_Model->obtenerProfesor($user);
+
+		if($datos != NULL)
+		{
+			if($pass != $datos[0]['password_profesor'])
+				redirect(get("webURL")._sh."default/subircalificaciones/1");				
+			else
+			{
+				SESSION("id_profesor",$datos[0]['id_profesor']);
+				SESSION("usuario_profesor",$datos[0]['usuario_profesor']);
+				SESSION("nombre_profesor",$datos[0]['nombre_profesor']);
+				SESSION("ap_profesor",$datos[0]['ap_profesor']);
+				SESSION("am_profesor",$datos[0]['am_profesor']);
+				
+				redirect(get("webURL")._sh."default/subircalificaciones");
+			}
+		}
+		else
+			redirect(get("webURL")._sh."default/subircalificaciones/2");
+	}
+
+	public function subircalificaciones($error = NULL)
 	{
 		if(!SESSION('id_profesor'))
+		{
+			if(isset($error))
+			{
+				if($error == '2') $vars['error'] = "No existe el usuario, por favor ingrese los datos correctamente.";
+				else if($error == '1') $vars['error'] = "La contraseña no coincide, intente de nuevo por favor";
+			}
+				
 			$vars['view'] = $this->view("login_profesor", true);
+		}
 		else
+		{
+			$vars['periodo'] = periodo_actual();
 			$vars['view'] = $this->view("subircalificaciones", true);
+
+		}
 		$this->render("content", $vars);
 	}
 
 	public function salir()
 	{
 		unsetsessions();
-		redirect(get("webURL")._sh."default/calificaciones");
+		redirect(get("webURL"));
 	}
 
 	
