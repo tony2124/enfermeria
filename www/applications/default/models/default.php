@@ -31,6 +31,11 @@ class Default_Model extends ZP_Model {
 		return $this->Db->query("select * from materias natural join inscripciones where semestre_materia <= '$semestre' and id_alumno = '$nc'");
 	}
 
+	public function obtenerTodasMaterias()
+	{
+		return $this->Db->query("select * from materias");
+	}
+
 	public function obtenerMateriasProfesor($prof, $periodo)
 	{
 		return $this->Db->query("select * from profesores_materias natural join materias natural join profesores where id_profesor = '$prof' and periodo ='$periodo'");
@@ -55,4 +60,16 @@ class Default_Model extends ZP_Model {
 	{
 		return $this->Db->query("update inscripciones set calificacion = '$cal' where folio='$folio'");
 	}
+
+	public function registroAlumno($matricula, $nombre, $ap, $am, $fecha)
+	{
+		return $this->Db->query("insert into alumnos values('$matricula', '$nombre', '$ap', '$am', '$fecha','$matricula')");
+	}
+
+	public function inscribir($nc, $mat)
+	{
+		$folio = uniqid();
+		return $this->Db->query("insert into inscripciones values('$folio', '$nc', '$mat', '0')");
+	}
+
 }

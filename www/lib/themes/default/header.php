@@ -16,6 +16,8 @@
 		
 		<link href="<?php print path("vendors/css/frameworks/bootstrap/css/bootstrap.min.css", "zan"); ?>" rel="stylesheet">
 		<link href="<?php print $this->themePath; ?>/css/style.css" rel="stylesheet">
+		<link href="<?php print path("vendors/css/frameworks/smoothness/jquery-ui-1.8.21.custom.css", "zan"); ?>" rel="stylesheet">
+
 		<?php print $this->getCSS(); ?>
 		<script src="<?php print path("vendors/js/jquery-1.7.2.min.js","zan") ?>"></script>
 
@@ -33,6 +35,8 @@
 		<!-- BANNER  -->
 		<script type="text/javascript" src="<?php print path("vendors/js/banner/jqFancyTransitions.1.8.min.js","zan") ?>"></script>
 
+		<script src="<?php print path("vendors/js/jquery-ui-1.8.21.custom.min.js","zan") ?>"></script>
+
 		<script type="text/javascript">
 		$(document).ready( function(){
 		    $('#slideshowHolder').jqFancyTransitions({ 
@@ -43,6 +47,16 @@
 		    	navigation: true });
 
 		    var galleries = $('.ad-gallery').adGallery();
+
+		     $( ".selectorFecha" ).datepicker({ 
+    			defaultDate: "-1y", 
+                
+				dateFormat: 'yy-mm-dd',  
+				showAnim: 'explode',
+				duration: 'normal',
+				changeMonth: true,
+                changeYear: true });
+			   
 		});
 
 		</script>

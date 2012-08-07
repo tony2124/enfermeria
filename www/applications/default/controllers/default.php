@@ -261,8 +261,13 @@ class Default_Controller extends ZP_Controller {
 				
 			$vars['view'] = $this->view("login_profesor", true);
 		}
+		else if(strcmp(SESSION('id_profesor'),'1')==0)
+		{
+			$vars['view'] = $this->view("administrador", true);
+		}
 		else
 		{
+
 			$vars['periodo'] = periodo_actual();
 			if($mat!=NULL)
 			{
@@ -298,6 +303,24 @@ class Default_Controller extends ZP_Controller {
 		for($i = 0; $i < sizeof($folio); $i++)
 			$this->Default_Model->guardarCalificacion($folio[$i], $calif[$i]);
 		redirect(get('webURL')._sh.'default/subircalificaciones/calif/'.$materia);
+	}
+
+	public function registraAlumno()
+	{
+		$matricula = POST('matricula');
+		$nombre = POST('nombre');
+		$ap = POST('ap');
+		$am = POST('am');
+		$fecha = POST('fecha');
+
+		$this->Default_Model->registroAlumno($matricula, $nombre, $ap, $am, $fecha);
+
+		$materias = $this->Default_Model->obtenerTodasMaterias();
+
+		foreach ($materias as $mat) {
+			$this->Default_Model->inscribir($matricula, $mat['id_materia']);
+		}
+		redirect(get('webURL')._sh.'default/subircalificaciones');
 	}
 
 	public function salir()
