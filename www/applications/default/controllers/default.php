@@ -249,7 +249,7 @@ class Default_Controller extends ZP_Controller {
 			redirect(get("webURL")._sh."default/subircalificaciones/2");
 	}
 
-	public function subircalificaciones($error = NULL)
+	public function subircalificaciones($error = NULL, $mat = NULL)
 	{
 		if(!SESSION('id_profesor'))
 		{
@@ -264,6 +264,13 @@ class Default_Controller extends ZP_Controller {
 		else
 		{
 			$vars['periodo'] = periodo_actual();
+			if($mat!=NULL)
+			{
+				$vars['materia'] = $mat;
+				$vars['alumnos'] = $this->Default_Model->obtenerAlumnos($mat, periodo_actual());
+			}
+			
+			$vars['materias'] = $this->Default_Model->obtenerMateriasProfesor(SESSION('id_profesor'), periodo_actual());
 			$vars['view'] = $this->view("subircalificaciones", true);
 
 		}
