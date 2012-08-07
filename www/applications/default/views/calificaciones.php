@@ -14,11 +14,11 @@ En la siguiente tabla se muestra una relación de las materias que se han cursad
     	</tr>
   	</thead>
   	<tbody>
-  		<?php foreach ($materias as $materia) if(strcmp($materia['semestre_materia'],$i) == 0) { ?>
+  		<?php foreach ($materias as $materia) if(strcmp($materia['semestre_materia'], $i) == 0) { ?>
   		<tr>
   			<td><?php print $materia['nombre_materia'] ?></td>
         <td><?php print $materia['semestre_materia'] ?></td>
-  			<td></td>
+  			<td><?php print $materia['calificacion'] ?></td>
   		</tr>
   		<?php } ?>
   	</tbody>

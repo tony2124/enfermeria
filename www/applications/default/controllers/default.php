@@ -193,7 +193,7 @@ class Default_Controller extends ZP_Controller {
 		{
 			$vars['view'] = $this->view("calificaciones", true);
 			$sem = semestre(SESSION("fecha_inscripcion"));
-			$vars['materias'] = $this->Default_Model->obtenerMaterias($sem);
+			$vars['materias'] = $this->Default_Model->obtenerMaterias($sem, SESSION("id_alumno"));
 			$vars['semestre'] = $sem;
 
 		}
@@ -272,7 +272,13 @@ class Default_Controller extends ZP_Controller {
 				$i = 0;$nicodemo = null;
 				foreach ($alumnos as $al ) {
 					if(strcmp(semestre($al['fecha_inscripcion']), $materiasDelProfesor[0]['semestre_materia']) == 0)
+					{
+						$data = $this->Default_Model->obtenerCalificacion($mat, $al['id_alumno']);
+						$al['calificacion'] = $data[0]['calificacion'];
+						$al['folio'] = $data[0]['folio'];
 						$nicodemo[$i++] = $al;
+					}
+						
 				}
 			$vars['alumnos'] = $nicodemo;
 			}
@@ -282,6 +288,16 @@ class Default_Controller extends ZP_Controller {
 
 		}
 		$this->render("content", $vars);
+	}
+
+	public function guardarCalificacion()
+	{
+		$calif = POST('calificacion');
+		$folio = POST('folio');
+		$materia = POST('id_materia');
+		for($i = 0; $i < sizeof($folio); $i++)
+			$this->Default_Model->guardarCalificacion($folio[$i], $calif[$i]);
+		redirect(get('webURL')._sh.'default/subircalificaciones/calif/'.$materia);
 	}
 
 	public function salir()

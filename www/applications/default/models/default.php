@@ -26,17 +26,16 @@ class Default_Model extends ZP_Model {
 		return $this->Db->query("select * from profesores where usuario_profesor = '$user'");
 	}
 	
-	public function obtenerMaterias($semestre)
+	public function obtenerMaterias($semestre, $nc)
 	{
-		return $this->Db->query("select * from materias where semestre_materia <= '$semestre'");
+		return $this->Db->query("select * from materias natural join inscripciones where semestre_materia <= '$semestre' and id_alumno = '$nc'");
 	}
 
 	public function obtenerMateriasProfesor($prof, $periodo)
 	{
 		return $this->Db->query("select * from profesores_materias natural join materias natural join profesores where id_profesor = '$prof' and periodo ='$periodo'");
 	}
-	
-	
+
 	public function obtenerMateria($mat)
 	{
 		return $this->Db->query("select * from materias where id_materia = '$mat'");
@@ -45,5 +44,15 @@ class Default_Model extends ZP_Model {
 	public function obtenerAlumnos()
 	{
 		return $this->Db->query("select * from alumnos");
+	}
+
+	public function obtenerCalificacion($mat, $nc)
+	{
+		return $this->Db->query("select * from inscripciones where id_alumno = '$nc' and id_materia='$mat'");
+	}
+
+	public function guardarCalificacion($folio, $cal)
+	{
+		return $this->Db->query("update inscripciones set calificacion = '$cal' where folio='$folio'");
 	}
 }

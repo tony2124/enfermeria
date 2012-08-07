@@ -9,28 +9,40 @@
 <?php } ?>
 </select>
 <hr>
-<?php if(isset($materia) && $materia != null) { ?>
-<table width="600" class = "table table-striped table-bordered table-condensed">
-	<thead>
-     	<tr>
-     		<th>N. CONTROL</th>
-     		<th>NOMBRE DEL ALUMNO</th>
-        	<th>SEMESTRE</th>
-		    <th>CALIFICACIÓN</th>
-    	</tr>
-  	</thead>
-  	<tbody>
-      <?php if(isset($alumnos) && $alumnos != null) foreach ($alumnos as $al) { ?>
-      <tr>
-  		<td><?php print $al['id_alumno'] ?></td>
-  		<td><?php print $al['ap_alumno'].' '.$al['am_alumno'].' '.$al['nombre_alumno'] ?></td>
-  		<td><?php print semestre($al['fecha_inscripcion']) ?></td>
-  		<td><input type="text" value="0" class="input-small"></td>
-    </tr>
-      <?php } ?>
-      <tr>
-        <td colspan="4"><input type="submit" class="btn btn-success pull-right" value="Guardar calificación"></td>
+<?php if(isset($materia) && $materia != null) if(isset($alumnos) && $alumnos != null){ ?>
+<form action="<?php print get('webURL')._sh.'default/guardarCalificacion' ?>" method="post">
+  <table width="600" class = "table table-striped table-bordered table-condensed">
+  	<thead>
+       	<tr>
+       		<th>N. CONTROL</th>
+       		<th>NOMBRE DEL ALUMNO</th>
+          	<th>SEMESTRE</th>
+  		    <th>CALIFICACIÓN</th>
+      	</tr>
+    	</thead>
+    	<tbody>
+        <?php  foreach ($alumnos as $al) { ?>
+        <tr>
+    		<td><?php print $al['id_alumno'] ?></td>
+    		<td><?php print $al['ap_alumno'].' '.$al['am_alumno'].' '.$al['nombre_alumno'] ?></td>
+    		<td><?php print semestre($al['fecha_inscripcion']) ?></td>
+    		<td>
+          <input name="calificacion[]" type="text" value="<?php print $al['calificacion'] ?>" class="input-small">
+          <input type="hidden" name="folio[]" value="<?php print $al['folio'] ?>"> 
+        </td>
       </tr>
-  	</tbody>
-</table>
+        <?php } ?>
+        <tr>
+          <td colspan="4"><input type="submit" class="btn btn-success pull-right" value="Guardar calificación">
+          <input type="hidden" name="id_materia" value="<?php print $materia ?>">
+          </td>
+        </tr>
+    	</tbody>
+  </table>
+</form>
+<?php } else {  ?>
+<div class="alert alert-error">
+  <h2>Error</h2>
+<p>No se ha encontrado ningún alumno inscrito en esta materia, por favor póngase en contacto con el administrador del sitio para verificar si es un error.</p>
+</div>
 <?php } ?>
