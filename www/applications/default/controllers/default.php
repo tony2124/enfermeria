@@ -267,7 +267,14 @@ class Default_Controller extends ZP_Controller {
 			if($mat!=NULL)
 			{
 				$vars['materia'] = $mat;
-				$vars['alumnos'] = $this->Default_Model->obtenerAlumnos($mat, periodo_actual());
+				$materiasDelProfesor = $this->Default_Model->obtenerMateria($mat);
+				$alumnos = $this->Default_Model->obtenerAlumnos();
+				$i = 0;$nicodemo = null;
+				foreach ($alumnos as $al ) {
+					if(strcmp(semestre($al['fecha_inscripcion']), $materiasDelProfesor[0]['semestre_materia']) == 0)
+						$nicodemo[$i++] = $al;
+				}
+			$vars['alumnos'] = $nicodemo;
 			}
 			
 			$vars['materias'] = $this->Default_Model->obtenerMateriasProfesor(SESSION('id_profesor'), periodo_actual());

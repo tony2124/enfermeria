@@ -35,4 +35,15 @@ class Default_Model extends ZP_Model {
 	{
 		return $this->Db->query("select * from profesores_materias natural join materias natural join profesores where id_profesor = '$prof' and periodo ='$periodo'");
 	}
+	
+	
+	public function obtenerMateria($mat)
+	{
+		return $this->Db->query("select * from materias where id_materia = '$mat'");
+	}
+
+	public function obtenerAlumnos()
+	{
+		return $this->Db->query("select * from alumnos");
+	}
 }

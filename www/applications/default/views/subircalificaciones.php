@@ -5,10 +5,11 @@
 <select onchange="location.href='<?php print get("webURL")._sh.'default/subircalificaciones/calif/' ?>'+$(this).val()">
 	<option value="0">---Seleccione una----</option>
 <?php foreach ($materias as $mat) { ?>
-	<option value="<?php print $mat['id_materia'] ?>"  <?php if($materia != null) if($materia == $mat['id_materia']) print 'selected="selected"' ?>> <?php print $mat['nombre_materia'] ?> </option>
+	<option value="<?php print $mat['id_materia'] ?>"  <?php if(isset($materia) && $materia != null) if($materia == $mat['id_materia']) print 'selected="selected"' ?>> <?php print $mat['nombre_materia'] ?> </option>
 <?php } ?>
 </select>
 <hr>
+<?php if(isset($materia) && $materia != null) { ?>
 <table width="600" class = "table table-striped table-bordered table-condensed">
 	<thead>
      	<tr>
@@ -19,9 +20,17 @@
     	</tr>
   	</thead>
   	<tbody>
-  		<td>08020196</td>
-  		<td></td>
-  		<td></td>
+      <?php if(isset($alumnos) && $alumnos != null) foreach ($alumnos as $al) { ?>
+      <tr>
+  		<td><?php print $al['id_alumno'] ?></td>
+  		<td><?php print $al['ap_alumno'].' '.$al['am_alumno'].' '.$al['nombre_alumno'] ?></td>
+  		<td><?php print semestre($al['fecha_inscripcion']) ?></td>
   		<td><input type="text" value="0" class="input-small"></td>
+    </tr>
+      <?php } ?>
+      <tr>
+        <td colspan="4"><input type="submit" class="btn btn-success pull-right" value="Guardar calificación"></td>
+      </tr>
   	</tbody>
 </table>
+<?php } ?>
