@@ -263,6 +263,9 @@ class Default_Controller extends ZP_Controller {
 		}
 		else if(strcmp(SESSION('id_profesor'),'1')==0)
 		{
+			$vars['profesores'] = $this->Default_Model->obtenerTodosProfesores();
+			$vars['materias'] = $this->Default_Model->obtenerTodasMaterias();
+			$vars['periodo'] =  periodo_actual();
 			$vars['view'] = $this->view("administrador", true);
 		}
 		else
@@ -279,9 +282,12 @@ class Default_Controller extends ZP_Controller {
 					if(strcmp(semestre($al['fecha_inscripcion']), $materiasDelProfesor[0]['semestre_materia']) == 0)
 					{
 						$data = $this->Default_Model->obtenerCalificacion($mat, $al['id_alumno']);
-						$al['calificacion'] = $data[0]['calificacion'];
-						$al['folio'] = $data[0]['folio'];
-						$nicodemo[$i++] = $al;
+						if($data)
+						{
+							$al['calificacion'] = $data[0]['calificacion'];
+							$al['folio'] = $data[0]['folio'];
+							$nicodemo[$i++] = $al;
+						}	
 					}
 						
 				}
@@ -289,6 +295,7 @@ class Default_Controller extends ZP_Controller {
 			}
 			
 			$vars['materias'] = $this->Default_Model->obtenerMateriasProfesor(SESSION('id_profesor'), periodo_actual());
+
 			$vars['view'] = $this->view("subircalificaciones", true);
 
 		}
@@ -320,6 +327,42 @@ class Default_Controller extends ZP_Controller {
 		foreach ($materias as $mat) {
 			$this->Default_Model->inscribir($matricula, $mat['id_materia']);
 		}
+		redirect(get('webURL')._sh.'default/subircalificaciones');
+	}
+
+	public function registraProfesor()
+	{
+		$usuario = POST('usuario');
+		$nombre = POST('nombre');
+		$ap = POST('ap');
+		$am = POST('am');
+		$pass = POST('pass');
+
+		$this->Default_Model->registroProfesor($usuario, $pass, $nombre, $ap, $am);
+
+		redirect(get('webURL')._sh.'default/subircalificaciones');
+	}
+
+	public function registraMateria()
+	{
+		
+		$nombre = POST('nombre');
+		$sem = POST('semestre');
+
+		$this->Default_Model->registroMateria($nombre, $sem);
+
+		redirect(get('webURL')._sh.'default/subircalificaciones');
+	}
+
+	public function asignacion()
+	{
+		
+		$profesor = POST('profesor');
+		$materia = POST('materia');
+		$periodo = POST('periodo');
+
+		$this->Default_Model->registroAsignacion($profesor, $materia, $periodo);
+
 		redirect(get('webURL')._sh.'default/subircalificaciones');
 	}
 

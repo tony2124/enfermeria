@@ -53,7 +53,7 @@
   <div class="modal-body">
     <p>En el siguiente formulario se encuentran los datos que se requieren para el registro de un nuevo profesor, por favor llénelos todos correctamente.</p>
     <hr>
-    <form id="editarAdmin" class="form-horizontal" method="POST" action="<?php print get('webURL')._sh.'default/registraAlumno' ?>">
+    <form id="editarAdmin" class="form-horizontal" method="POST" action="<?php print get('webURL')._sh.'default/registraProfesor' ?>">
       <div class="control-group">
         <label class="control-label" >Usuario</label>
         <div class="controls">
@@ -94,15 +94,15 @@
   <div class="modal-body">
     <p>En el siguiente formulario se encuentran los datos que se requieren para el registro de una nueva materia, por favor llénelos todos correctamente.</p>
     <hr>
-    <form id="editarAdmin" class="form-horizontal" method="POST" action="<?php print get('webURL')._sh.'default/registraAlumno' ?>">
+    <form id="editarAdmin" class="form-horizontal" method="POST" action="<?php print get('webURL')._sh.'default/registraMateria' ?>">
       <div class="control-group">
-        <label class="control-label" >Nombre de la materia</label>
+        <label class="control-label">Nombre de la materia</label>
         <div class="controls">
-    <!-- -->  <input type="text" name="usuario" class="input-xlarge" required>
+    <!-- -->  <input type="text" name="nombre" class="input-xlarge" required>
         </div><br>
-        <label class="control-label" >Semestre en que se imparte</label>
+        <label class="control-label">Semestre en que se imparte</label>
         <div class="controls">
-    <!-- -->  <input type="password" name="pass" class="input-xlarge" required>
+    <!-- -->  <input type="text" name="semestre" class="input-xlarge" required>
         </div><br>
        <hr>      
       </div>
@@ -123,19 +123,32 @@
   <div class="modal-body">
     <p>En el siguiente formulario se encuentran los datos que se requieren para la asignación de una materia a un profesor, por favor llénelos todos correctamente.</p>
     <hr>
-    <form id="editarAdmin" class="form-horizontal" method="POST" action="<?php print get('webURL')._sh.'default/registraAlumno' ?>">
+    <form id="editarAdmin" class="form-horizontal" method="POST" action="<?php print get('webURL')._sh.'default/asignacion' ?>">
       <div class="control-group">
         <label class="control-label">Materia</label>
         <div class="controls">
-    <!-- -->  <select>
-    		<option>ASJKD</option>
+    <!-- -->  <select name="profesor">
+    			<?php
+    				foreach ($profesores as $profesor) { ?>
+    				<option value="<?php  print $profesor['id_profesor'] ?>"><?php print $profesor['nombre_profesor'] ?></option>
+    			<?php }
+    			?>
 				</select>
         </div><br>
-        <label class="control-label" >Profesor</label>
+        <label class="control-label">Profesor</label>
         <div class="controls">
-     <!-- -->  <select>
-    		<option>ASJKD</option>
+     <!-- -->   <select name="materia">
+    			<?php
+    				foreach ($materias as $materia) { ?>
+    				<option value="<?php  print $materia['id_materia'] ?>"><?php print $materia['nombre_materia'] ?></option>
+    			<?php }
+    			?>
 				</select>
+        </div><br>
+        <label class="control-label">Periodo</label>
+        <div class="controls">
+    <!-- -->  <input type="text" disabled class="input-xlarge" value="<?php print $periodo ?>">
+   			 <input type="hidden" name="periodo" value="<?php print $periodo ?>">
         </div><br>
        <hr>      
       </div>

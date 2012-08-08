@@ -36,14 +36,25 @@ class Default_Model extends ZP_Model {
 		return $this->Db->query("select * from materias");
 	}
 
+	public function obtenerTodosProfesores()
+	{
+		return $this->Db->query("select * from profesores where id_profesor != 1");
+	}
+
 	public function obtenerMateriasProfesor($prof, $periodo)
 	{
-		return $this->Db->query("select * from profesores_materias natural join materias natural join profesores where id_profesor = '$prof' and periodo ='$periodo'");
+		
+		return $this->Db->query("select * from profesores_materias natural join materias where id_profesor = '$prof' and periodo ='$periodo'");
 	}
 
 	public function obtenerMateria($mat)
 	{
 		return $this->Db->query("select * from materias where id_materia = '$mat'");
+	}
+
+	public function obtenerMateriaNoApartada()
+	{
+		return $this->Db->query("select * from materias");
 	}
 
 	public function obtenerAlumnos()
@@ -64,6 +75,22 @@ class Default_Model extends ZP_Model {
 	public function registroAlumno($matricula, $nombre, $ap, $am, $fecha)
 	{
 		return $this->Db->query("insert into alumnos values('$matricula', '$nombre', '$ap', '$am', '$fecha','$matricula')");
+	}
+
+	public function registroProfesor($usuario, $pass, $nombre, $ap, $am)
+	{
+		$this->Db->query("insert into profesores (usuario_profesor, password_profesor, nombre_profesor, ap_profesor, am_profesor) values('$usuario', '$pass', '$nombre', '$ap', '$am')");
+
+	}
+
+	public function registroMateria($nombre, $sem)
+	{
+		$this->Db->query("insert into materias (nombre_materia, semestre_materia) values('$nombre', '$sem')");
+	}
+
+	public function registroAsignacion($profesor, $materia, $periodo)
+	{
+		$this->Db->query("insert into profesores_materias values('$profesor', '$materia', '$periodo')");
 	}
 
 	public function inscribir($nc, $mat)
