@@ -1,7 +1,32 @@
-<a data-toggle="modal" href="#registroAlumno">Registrar Alumno</a> | 
-<a data-toggle="modal" href="#registroProfesor">Registrar Profesor</a> |
-<a data-toggle="modal" href="#registroMateria">Registrar Materia</a> |
-<a data-toggle="modal" href="#asignacion">Asignar Materia a Profesor</a>
+<table align="center">
+  <tr align="center">
+    <td>
+      <a data-toggle="modal" href="#registroAlumno">
+        <img class="imagen" src="<?php print path("www/lib/images/alumno.jpg","www"); ?>" width="300" /><br>
+        Registrar Alumno</a> 
+    </td>
+    <td>
+      <a data-toggle="modal" href="#registroProfesor">
+        <img class="imagen" src="<?php print path("www/lib/images/profesores.gif","www"); ?>" width="300" /><br>
+        Registrar Profesor</a>
+    </td>
+    <td>
+      <a data-toggle="modal" href="#registroMateria">
+        <img class="imagen" src="<?php print path("www/lib/images/materias.jpg","www"); ?>" width="300" /><br>
+        Registrar Materia</a> 
+    </td>
+  </tr>
+  <tr align="center">
+    <td colspan="3">
+      <a data-toggle="modal" href="#asignacion">
+     <img class="imagen" src="<?php print path("www/lib/images/asignacion.jpg","www"); ?>" width="300" /><br>
+     Asignar Materia a Profesor</a>
+ </td>
+  </tr>
+</table>
+ 
+
+
 
 
 <!-- REGISTRO DE ALUMNOS -->
@@ -125,7 +150,7 @@
     <hr>
     <form id="editarAdmin" class="form-horizontal" method="POST" action="<?php print get('webURL')._sh.'default/asignacion' ?>">
       <div class="control-group">
-        <label class="control-label">Materia</label>
+        <label class="control-label">Profesor</label>
         <div class="controls">
     <!-- -->  <select name="profesor">
     			<?php
@@ -135,7 +160,7 @@
     			?>
 				</select>
         </div><br>
-        <label class="control-label">Profesor</label>
+        <label class="control-label">Materia</label>
         <div class="controls">
      <!-- -->   <select name="materia">
     			<?php

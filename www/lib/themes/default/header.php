@@ -90,20 +90,14 @@
 			-webkit-transform: rotate(360deg);
 		}
 
-		.google {
-			width:25px;
-			height:25px;
-			-webkit-transition: 0.5s;
+		.imagen
+		{
+			opacity: 0.7;
 		}
 
-		.google:hover{
-			width:50px;
-			height:50px;
-			-webkit-transition: 0.5s;
-			/* Firefox */
-			-moz-transform: rotate(360deg);
-			/* WebKit */
-			-webkit-transform: rotate(360deg);
+		.imagen:hover
+		{
+			opacity: 1;
 		}
 
 		.ad-gallery {
