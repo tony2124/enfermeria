@@ -18,10 +18,13 @@
 			 <img src='<?php print path("www/lib/images/banner4.jpg","www"); ?>' alt='Visitanos' />
 			</div>
 
+			<?php if(!SESSION("id_profesor")) { ?>
 			<a style="font-size: 12px" data-icon="✿" href="<?php print get("webURL")._sh.'default/calificaciones' ?>" class="blue button morph">CALIFICACIONES</a>
+			<?php } ?>
 			<a style="font-size: 12px" data-icon="✿" href="http://escuelaenfermeria.hostzi.com/moodle/login/index.php" class="blue button morph" style="-webkit-border-radius: 10px; text-decoration:none">&nbsp;AULA VIRTUAL&nbsp;</a>
+			<?php if(!SESSION("id_alumno")) { ?>
 			<a style="font-size: 12px" data-icon="✿" href="<?php print get("webURL")._sh.'default/subircalificaciones' ?>" class="blue button morph" style="-webkit-border-radius: 10px; text-decoration:none">PROFESORES</a>
-			
+			<?php } ?>
 			
 			<?php if(SESSION("id_alumno")) { ?>
 
