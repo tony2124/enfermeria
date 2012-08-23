@@ -38,7 +38,7 @@ class Default_Model extends ZP_Model {
 
 	public function obtenerTodosProfesores()
 	{
-		return $this->Db->query("select * from profesores where id_profesor != 1");
+		return $this->Db->query("select * from profesores where id_profesor != 1 order by ap_profesor asc, am_profesor asc, nombre_profesor asc");
 	}
 
 	public function obtenerMateriasProfesor($prof, $periodo)
@@ -59,7 +59,7 @@ class Default_Model extends ZP_Model {
 
 	public function obtenerAlumnos()
 	{
-		return $this->Db->query("select * from alumnos");
+		return $this->Db->query("select * from alumnos order by ap_alumno asc, am_alumno asc, nombre_alumno asc");
 	}
 
 	public function obtenerCalificacion($mat, $nc)
@@ -99,4 +99,27 @@ class Default_Model extends ZP_Model {
 		return $this->Db->query("insert into inscripciones values('$folio', '$nc', '$mat', '0')");
 	}
 
+	public function eliminarAlumno($id)
+	{
+		return $this->Db->query("delete from alumnos where id_alumno = '$id'");
+	}
+
+	public function eliminarProfesor($id)
+	{
+		return $this->Db->query("delete from profesores where id_profesor = '$id'");
+	}
+	public function eliminarMateria($id)
+	{
+		return $this->Db->query("delete from materias where id_materia = '$id'");
+	}
+
+	public function eliminarRelacion($id)
+	{
+		return $this->Db->query("delete from materias where id_materia = '$id'");
+	}
+
+	public function obtenerRelaciones($periodo)
+	{
+		return $this->Db->query("select * from profesores_materias natural join materias natural join profesores where periodo = '$id'");
+	}
 }

@@ -327,7 +327,7 @@ class Default_Controller extends ZP_Controller {
 		foreach ($materias as $mat) {
 			$this->Default_Model->inscribir($matricula, $mat['id_materia']);
 		}
-		redirect(get('webURL')._sh.'default/subircalificaciones');
+		redirect(get('webURL')._sh.'default/adminAlumnos');
 	}
 
 	public function registraProfesor()
@@ -340,7 +340,7 @@ class Default_Controller extends ZP_Controller {
 
 		$this->Default_Model->registroProfesor($usuario, $pass, $nombre, $ap, $am);
 
-		redirect(get('webURL')._sh.'default/subircalificaciones');
+		redirect(get('webURL')._sh.'default/adminProfesores');
 	}
 
 	public function registraMateria()
@@ -351,7 +351,7 @@ class Default_Controller extends ZP_Controller {
 
 		$this->Default_Model->registroMateria($nombre, $sem);
 
-		redirect(get('webURL')._sh.'default/subircalificaciones');
+		redirect(get('webURL')._sh.'default/adminMaterias');
 	}
 
 	public function asignacion()
@@ -363,7 +363,64 @@ class Default_Controller extends ZP_Controller {
 
 		$this->Default_Model->registroAsignacion($profesor, $materia, $periodo);
 
-		redirect(get('webURL')._sh.'default/subircalificaciones');
+		redirect(get('webURL')._sh.'default/adminAsignacion');
+	}
+
+	public function adminAlumnos()
+	{
+		$vars['alumnos'] = $this->Default_Model->obtenerAlumnos();
+		$vars['view'] = $this->view("adminAlumnos", true);
+		$this->render("content", $vars);
+	}
+
+	public function adminProfesores()
+	{
+		$vars['profesores'] = $this->Default_Model->obtenerTodosProfesores();
+		$vars['view'] = $this->view("adminProfesores", true);
+		$this->render("content", $vars);
+	}
+
+
+	public function adminMaterias()
+	{
+		$vars['materias'] = $this->Default_Model->obtenerTodasMaterias();
+		$vars['view'] = $this->view("adminMaterias", true);
+		$this->render("content", $vars);
+	}
+
+	public function adminAsignacion()
+	{
+		$vars['relaciones'] = $this->Default_Model->obtenerRelaciones(periodo_actual());
+		$vars['view'] = $this->view("adminAsignacion", true);
+		$this->render("content", $vars);
+	}
+
+	public function eliminarAlumno()
+	{
+		$id = POST('dato');
+		$this->Default_Model->eliminarAlumno($id);
+		redirect(get("webURL")._sh."default/adminAlumnos");
+	}
+
+	public function eliminarProfesor()
+	{
+		$id = POST('dato');
+		$this->Default_Model->eliminarProfesor($id);
+		redirect(get("webURL")._sh."default/adminProfesores");
+	}
+
+	public function eliminarMateria()
+	{
+		$id = POST('dato');
+		$this->Default_Model->eliminarMateria($id);
+		redirect(get("webURL")._sh."default/adminMaterias");
+	}
+
+	public function eliminarRelacion()
+	{
+		$id = POST('dato');
+		$this->Default_Model->eliminarRelacion($id);
+		redirect(get("webURL")._sh."default/adminAsignacion");
 	}
 
 	public function salir()
@@ -371,6 +428,7 @@ class Default_Controller extends ZP_Controller {
 		unsetsessions();
 		redirect(get("webURL"));
 	}
+
 
 	
 
